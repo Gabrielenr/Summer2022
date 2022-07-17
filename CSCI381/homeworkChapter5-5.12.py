@@ -33,7 +33,6 @@ def play_game(attempts=0):
         if input(f"Display list of actors? [yes, no]: ").upper() == "YES":
             print(*game_of_thrones.keys(), sep=', ')
             answer = input(f"Answer: ")
-
             while wrong_answer:
                 if answer == actor:
                     print(f'Correct')
