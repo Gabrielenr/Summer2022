@@ -64,13 +64,24 @@ def menu(choice):
                     for key in tlds:
                         print(key, ':', tlds[key])
             elif selection == '2':
-                country_abbr = input(f'Enter Abbreviation to update: ')
-                if country_abbr in tlds.values():
+                country_name = input(f"Enter the Country's name you wish to update: ")
+                if country_name in tlds.keys():
                     new_country_abb = input(f'Enter new Abbreviation: ')
-                    country_ley = tlds[]
-                    tlds[country_abbr] =
+                    tlds[country_name] = new_country_abb
                     for key in tlds:
                         print(key, ':', tlds[key])
+    elif choice == "4":
+        new_dic = dict([(value, key) for key, value in tlds.items()])
+        print(f"Original dictionary is: ")
+        for key in tlds:
+            print(key, ':', tlds[key])
+        print(f'New dictionary is:')
+        for key in new_dic:
+            print(key, ':', new_dic[key])
+
+    elif choice == "5":
+        for key, value in tlds.items():
+            print(key, ':', value.upper())
 
 
 menu(display_menu())
