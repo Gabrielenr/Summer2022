@@ -1,88 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CS 355 Home Page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <style>
-     h1{
-        padding-top: 20%; 
-        color: #f9f9f9;
-        text-align: center;
-     }
-     p{
-        color: #f9f9f9;
-     }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 355 Home Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        h1 {
+            padding-top: 20%;
+            color: #f9f9f9;
+            text-align: center;
+        }
+
+        p {
+            color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
 
 <div id="demo"></div>
 
 
-   <!-- NAVBAR BEGINS HERE-->
-   <nav id="navbar">
-     <ul>
-       <li class="dropdown">
-         <a href="index.html" class="dropbtn">Home</a>
-         <div class ="dropdown-content">
-         </div>
-       </li>
-       <li class="dropdown">
-         <a href="#" class="dropbtn">Course</a>
-         <div class="dropdown-content">
-           <a href="https://www.zybooks.com/" target="_blank">ZyBooks</a>
-           <a href="https://tophat.com/" target="_blank">TopHat</a>
-           <a href="https://drive.google.com/open?id=1AsHhIFfQ3yNE_m2z4wswRfKh77K0UH9w" target="_blank">Course Google Drive</a>
-           <a href="https://gaia.cs.umass.edu/kurose_ross/eighth.php" target="_blank">Kurose and Roose Computer Networking Book </a>
-           <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
-         </div>
-       </li>
-       <li class="dropdown">
-         <a href="#" class="dropbtn">About</a>
-         <div class="dropdown-content">
-           <a href="developer.html">About The Developer</a>
-           <a href="contact.html">Contact</a>
-         </div>
-       </li>
-       <li class="dropdown">
-          <a href="#" class="dropbtn">Browser</a>
-          <div class="dropdown-content">
-<!--             <a id = "navigator" href="navigator.html">Navigator</a>-->
-             <a href="javascript:null"
-                onClick="course.html">Navigator</a>
-             <a href="window.html">Window</a>
-             <a href="screen.html">Screen</a>
-             <a href="location.html">Location</a>
-             <a href="geolocation.html">Geolocation</a>
-          </div>
+<!-- NAVBAR BEGINS HERE-->
+<nav id="navbar">
+    <ul>
+        <li class="dropdown">
+            <a href="index.html" class="dropbtn">Home</a>
+            <div class="dropdown-content">
+            </div>
         </li>
         <li class="dropdown">
-           <a href="#" class="dropbtn">Search</a>
-           <div class="dropdown-content">
-              <a href="fromFile.html">From File</a>
-              <a href="googleAPI.html">Google API</a>
-           </div>
+            <a href="#" class="dropbtn">Course</a>
+            <div class="dropdown-content">
+                <a href="https://www.zybooks.com/" target="_blank">ZyBooks</a>
+                <a href="https://tophat.com/" target="_blank">TopHat</a>
+                <a href="https://drive.google.com/open?id=1AsHhIFfQ3yNE_m2z4wswRfKh77K0UH9w" target="_blank">Course
+                    Google Drive</a>
+                <a href="https://gaia.cs.umass.edu/kurose_ross/eighth.php" target="_blank">Kurose and Roose Computer
+                    Networking Book </a>
+                <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+            </div>
         </li>
-      </ul>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Browser</a>
+            <div class="dropdown-content">
+                <a id="navigator" onclick="navigatorFunction()">Navigator</a>
+                <a id="window" onclick="windowFunction()">Window</a>
+                <a id="screen" onclick="screenFunction() ">Screen</a>
+                <a id="location" onclick="locationFunction()">Location</a>
+                <a id="geolocation" onclick="getLocation()">Geolocation</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">About</a>
+            <div class="dropdown-content">
+                <a href="developer.html">About The Developer</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </li>
+    </ul>
 
-       <script>
-           function navigatorFunction() {
-               let text =
-                   "<p>Browser Name: " + navigator.appName + "</p>" +
-                   "<p>Browser Product: " + navigator.product + "</p>" +
-                   "<p>Browser Version: " + navigator.appVersion + "</p>" +
-                   "<p>User-agent header: " + navigator.userAgent + "</p>" +
-                   "<p>Platform: " + navigator.platform + "</p>" +
-                   "<p>Browser Language: " + navigator.language + "</p>";
+    <script>
+        function navigatorFunction() {
+            let text =
+                "<p>Browser Name: " + navigator.appName + "</p>" +
+                "<p>Browser Product: " + navigator.product + "</p>" +
+                "<p>Browser Version: " + navigator.appVersion + "</p>" +
+                "<p>User-agent header: " + navigator.userAgent + "</p>" +
+                "<p>Platform: " + navigator.platform + "</p>" +
+                "<p>Browser Language: " + navigator.language + "</p>";
 
-               document.getElementById("demo").innerHTML = text;
-               text.style.textAlign = "center";
-           }
-</script>
-   </nav>
-   <!--NAVBAR ENDS HERE-->
-   <h1>Welcome to my website</h1>
+            document.getElementById("navigator").innerHTML = text;
+            text.style.textAlign = "center";
+        }
+
+        function windowFunction() {
+            let text =
+            "<p>Inner Width: " + innerWidth+ "</p>" +
+            "<p>Inner Height: " + innerHeight+ "</p>"
+
+            document.getElementById("window").innerHTML = text
+                        text.style.textAlign = "center";
+        }
+
+        function screenFunction() {
+            let text =
+            "<p>Screen Width: " + screen.width + "</p>" +
+            "<p>Screen Height:" + screen.height + "</p>"
+            "<p>Available Screen Width: " + screen.availWidth + "</p>" +
+            "<p>Available Screen Height: " + screen.availHeight + "</p>" +
+            "<p>Screen Color Dept: " + screen.colorDepth + "</p>" +
+            "<p>Screen Pixel Depth: " + screen.pixelDepth + "</p>"
+
+            document.getElementById("screen").innerHTML = text
+                        text.style.textAlign = "center";
+
+        }
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(showLoc);
+        }
+
+        function showLoc(pos) {
+            document.getElementById("geolocation").innerHTML =
+                "Latitude: " +
+                pos.coords.latitude +
+                "<br>Longitude: " +
+                pos.coords.longitude;
+        }
+
+        function locationFunction() {
+            let text =
+            "<p>The full URL of this page is: " + window.location.href + "</p>" +
+            "<p>Page hostname is: " + window.location.hostname + "</p>" +
+            "<p>Page path is: " + window.location.pathname + "</p>" +
+            "<p>Page protocol is: " + window.location.protocol + "</p>"
+
+            document.getElementById("location").innerHTML = text;
+            text.style.textAlign = "center";
+        }
+    </script>
+</nav>
+<!--NAVBAR ENDS HERE-->
+<h1>Gabriel Rubio Alvarado</h1>
+<div class="display">
+
+</div>
 </body>
 </html>
