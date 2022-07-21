@@ -1,24 +1,32 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import url(https://fonts.googleapis.com/css?family=Lato);
 
 *{
   box-sizing: border-box;
   margin:0;
   padding:0;
   font-family: "Monseratt", sans-serif;
+
 }
 
 html{
+  background-image: url("stars.jpg");
+  background-size: cover;
+  position: relative;
+  height: 300px;
   background-color: #1A1E23;
 }
 
 section h2 h1{
   font-family: "Monseratt", sans-serif;
-  text-align: center;
+  text-align: left;
   height: 200px;
-  color: white;
+  color: whitesmoke;
   font-size: 20px;
+}
+
+.screenProperties {
+  color: whitesmoke;
 }
 
 .navbar {
@@ -39,12 +47,13 @@ ul {
 }
 
 a {
-  text-align: center;
+  text-align: left;
 }
+
 
 .dropbtn {
   display: inline-block;
-  color: white;
+  color: whitesmoke;
   text-align: center;
   padding: 14px 15px;
   text-decoration: none;
@@ -70,7 +79,7 @@ li a:hover{
       display: block;
       padding: 4px 0;
       font-family: Lato, sans-serif;
-      color: #ecf0f1;
+      color: whitesmoke;
       text-decoration: none;
       text-transform: uppercase;
       transition: 0.5s;
@@ -78,7 +87,7 @@ li a:hover{
 
 .dropdown-content a:hover::after {
   transform: scaleX(1);
-  transform-origin: left;
+  transform-origin: center;
 }
 
 .dropdown:hover .dropdown-content {
@@ -86,72 +95,10 @@ li a:hover{
 }
 
 article {
-  color: #f9f9f9;
-  text-align: center;
-  background-color: #1A1E23;
+  color: whitesmoke;
+  text-align: left;
+
 }
-
-/*Contact.html*/
-/*.contact-section{*/
-/*  background-size:cover;*/
-/*  background: #222629;*/
-/*  padding: 40px 0;*/
-/*}*/
-
-/*.contact-section h1{*/
-/*  text-align: center;*/
-/*  color: #E0E0E0;*/
-/*}*/
-
-/*.border{*/
-/*  width:100px;*/
-/*  height: 10px;*/
-/*  background: #34495e;*/
-/*  margin: 40px auto;*/
-/*}*/
-
-/*.contact-form{*/
-/*  max-width: 600px;*/
-/*  margin: auto;*/
-/*  padding: 0 10px;*/
-/*  overflow: hidden;*/
-/*}*/
-
-/*.contact-form-text{*/
-/*  display: block;*/
-/*  width: 100%;*/
-/*  box-sizing: border-box;*/
-/*  margin: 16px 0;*/
-/*  border: 0;*/
-/*  background: #111;*/
-/*  padding: 20px 40px;*/
-/*  outline: none;*/
-/*  color: #ddd;*/
-/*  transition: 0.5s;*/
-/*}*/
-
-/*.contact-form-text:hover{*/
-/*  box-shadow : 0 0 10px 4px #34495e;*/
-/*}*/
-
-/*textarea.contact-form-text{*/
-/*  resize: none;*/
-/*  height:120px;*/
-/*}*/
-
-/*.contact-form-btn{*/
-/*  float: right;*/
-/*  border: 0;*/
-/*  background: #34495e;*/
-/*  padding: 12px 50px;*/
-/*  border-radius: 20px;*/
-/*  cursor: pointer;*/
-/*  transition: 0.5s;*/
-/*}*/
-
-/*.contact-form-btn:hover{*/
-/*  background: #2980b9;*/
-/*}*/
 
 
 

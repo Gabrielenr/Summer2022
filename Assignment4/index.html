@@ -7,13 +7,14 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         h1 {
-            padding-top: 20%;
+            padding-top: 5%;
             color: #f9f9f9;
             text-align: center;
         }
 
         p {
-            color: #f9f9f9;
+            /*color: #f9f9f9;*/
+            color: white
         }
     </style>
 </head>
@@ -26,7 +27,7 @@
 <nav id="navbar">
     <ul>
         <li class="dropdown">
-            <a href="index.html" class="dropbtn">Home</a>
+            <a href="course.html" class="dropbtn">Home</a>
             <div class="dropdown-content">
             </div>
         </li>
@@ -55,15 +56,20 @@
         <li class="dropdown">
             <a href="#" class="dropbtn">About</a>
             <div class="dropdown-content">
-                <a href="developer.html">About The Developer</a>
-                <a href="contact.html">Contact</a>
+                <a href="course.html">About The Developer</a>
+                <a href="course.html">Contact</a>
             </div>
         </li>
     </ul>
 
     <script>
+        function insertAfter(referenceNode, newNode) {
+            referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+        }
+
         function navigatorFunction() {
             let text =
+                "<h2 class='screenProperties'>Navigator properties: </h2>" +
                 "<p>Browser Name: " + navigator.appName + "</p>" +
                 "<p>Browser Product: " + navigator.product + "</p>" +
                 "<p>Browser Version: " + navigator.appVersion + "</p>" +
@@ -71,60 +77,83 @@
                 "<p>Platform: " + navigator.platform + "</p>" +
                 "<p>Browser Language: " + navigator.language + "</p>";
 
-            document.getElementById("navigator").innerHTML = text;
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("NavigatorText");
+            insertAfter(div, el);
             text.style.textAlign = "center";
         }
 
         function windowFunction() {
             let text =
-            "<p>Inner Width: " + innerWidth+ "</p>" +
-            "<p>Inner Height: " + innerHeight+ "</p>"
+                "<h2 class='screenProperties'>Window properties: </h2>" +
+                "<p>Inner Width: " + innerWidth+ "</p>" +
+                "<p>Inner Height: " + innerHeight+ "</p>"
 
-            document.getElementById("window").innerHTML = text
-                        text.style.textAlign = "center";
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("WindowText");
+            insertAfter(div, el);
+            text.style.textAlign = "center";
         }
 
         function screenFunction() {
             let text =
-            "<p>Screen Width: " + screen.width + "</p>" +
-            "<p>Screen Height:" + screen.height + "</p>"
-            "<p>Available Screen Width: " + screen.availWidth + "</p>" +
-            "<p>Available Screen Height: " + screen.availHeight + "</p>" +
-            "<p>Screen Color Dept: " + screen.colorDepth + "</p>" +
-            "<p>Screen Pixel Depth: " + screen.pixelDepth + "</p>"
+                "<h2 class='screenProperties'>Screen properties: </h2>" +
+                "<p>Screen Width: " + screen.width + "</p>" +
+                "<p>Screen Height:" + screen.height + "</p>" +
+                "<p>Available Screen Width: " + screen.availWidth + "</p>" +
+                "<p>Available Screen Height: " + screen.availHeight + "</p>" +
+                "<p>Screen Color Dept: " + screen.colorDepth + "</p>" +
+                "<p>Screen Pixel Depth: " + screen.pixelDepth + "</p>"
 
-            document.getElementById("screen").innerHTML = text
-                        text.style.textAlign = "center";
-
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("ScreenText");
+            insertAfter(div, el);
+            text.style.textAlign = "center";
         }
+
+        function locationFunction() {
+            let text =
+                "<h2 class='screenProperties'>Location properties: </h2>" +
+                "<p>The full URL of this page is: " + window.location.href + "</p>" +
+                "<p>Page hostname is: " + window.location.hostname + "</p>" +
+                "<p>Page path is: " + window.location.pathname + "</p>" +
+                "<p>Page protocol is: " + window.location.protocol + "</p>"
+
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("LocationText");
+            insertAfter(div, el);
+            text.style.textAlign = "center";
+        }
+
         function getLocation() {
             navigator.geolocation.getCurrentPosition(showLoc);
         }
 
         function showLoc(pos) {
-            document.getElementById("geolocation").innerHTML =
-                "Latitude: " +
-                pos.coords.latitude +
-                "<br>Longitude: " +
-                pos.coords.longitude;
-        }
-
-        function locationFunction() {
             let text =
-            "<p>The full URL of this page is: " + window.location.href + "</p>" +
-            "<p>Page hostname is: " + window.location.hostname + "</p>" +
-            "<p>Page path is: " + window.location.pathname + "</p>" +
-            "<p>Page protocol is: " + window.location.protocol + "</p>"
+                "<h2 class='screenProperties'>Location properties: </h2>" +
+                "<p>Latitude: " + pos.coords.latitude + "</p>" +
+                "<p>Longitude: " + pos.coords.longitude + "</p>"
 
-            document.getElementById("location").innerHTML = text;
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("GeolocationText");
+            insertAfter(div, el);
             text.style.textAlign = "center";
         }
     </script>
 </nav>
 <!--NAVBAR ENDS HERE-->
 <h1>Gabriel Rubio Alvarado</h1>
-<div class="display">
+<p id="NavigatorText"></p>
+<p id="WindowText"></p>
+<p id="ScreenText"></p>
+<p id="LocationText"></p>
+<p id="GeolocationText"></p>
 
-</div>
 </body>
 </html>
