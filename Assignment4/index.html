@@ -6,16 +6,7 @@
     <title>CS 355 Home Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        h1 {
-            padding-top: 5%;
-            color: #f9f9f9;
-            text-align: center;
-        }
 
-        p {
-            /*color: #f9f9f9;*/
-            color: white
-        }
     </style>
 </head>
 <body>
@@ -25,7 +16,7 @@
 
 <!-- NAVBAR BEGINS HERE-->
 <nav id="navbar">
-    <ul>
+    <ul id="menu" class="menu">
         <li class="dropdown">
             <a href="course.html" class="dropbtn">Home</a>
             <div class="dropdown-content">
@@ -46,11 +37,11 @@
         <li class="dropdown">
             <a href="#" class="dropbtn">Browser</a>
             <div class="dropdown-content">
-                <a id="navigator" onclick="navigatorFunction()">Navigator</a>
-                <a id="window" onclick="windowFunction()">Window</a>
-                <a id="screen" onclick="screenFunction() ">Screen</a>
-                <a id="location" onclick="locationFunction()">Location</a>
-                <a id="geolocation" onclick="getLocation()">Geolocation</a>
+                <a id="navigator" href="#" onclick=" navigatorFunction()">Navigator</a>
+                <a id="window" href="#" onclick="windowFunction()">Window</a>
+                <a id="screen" href="#" onclick="screenFunction() ">Screen</a>
+                <a id="location" href="#" onclick="locationFunction()">Location</a>
+                <a id="geolocation" href="#" onclick="getLocation()">Geolocation</a>
             </div>
         </li>
         <li class="dropdown">
@@ -61,13 +52,32 @@
             </div>
         </li>
     </ul>
+</nav>
 
-    <script>
-        function insertAfter(referenceNode, newNode) {
-            referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-        }
+<div class="title">
+    <h1>Gabriel Rubio</h1>
+    <p style="text-align: center" id="NavigatorText"></p>
+    <p style="text-align: center" id="WindowText"></p>
+    <p style="text-align: center" id="ScreenText"></p>
+    <p style="text-align: center" id="LocationText"></p>
+    <p style="text-align: center" id="GeolocationText"></p>
+</div>
 
-        function navigatorFunction() {
+
+<script>
+    let onceCLicked = false;
+    let onceClicked1 = false;
+    let onceClicked2 = false;
+    let onceClicked3 = false;
+    let onceClicked4 = false;
+
+    function insertAfter(referenceNode, newNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
+
+    function navigatorFunction() {
+        if (!onceCLicked) {
+            onceCLicked = true;
             let text =
                 "<h2 class='screenProperties'>Navigator properties: </h2>" +
                 "<p>Browser Name: " + navigator.appName + "</p>" +
@@ -83,12 +93,15 @@
             insertAfter(div, el);
             text.style.textAlign = "center";
         }
+    }
 
-        function windowFunction() {
+    function windowFunction() {
+        if (!onceClicked1) {
+            onceClicked1 = true;
             let text =
                 "<h2 class='screenProperties'>Window properties: </h2>" +
-                "<p>Inner Width: " + innerWidth+ "</p>" +
-                "<p>Inner Height: " + innerHeight+ "</p>"
+                "<p>Inner Width: " + innerWidth + "</p>" +
+                "<p>Inner Height: " + innerHeight + "</p>"
 
             let el = document.createElement("span");
             el.innerHTML = text;
@@ -96,8 +109,11 @@
             insertAfter(div, el);
             text.style.textAlign = "center";
         }
+    }
 
-        function screenFunction() {
+    function screenFunction() {
+        if (!onceClicked2) {
+            onceClicked2 = true;
             let text =
                 "<h2 class='screenProperties'>Screen properties: </h2>" +
                 "<p>Screen Width: " + screen.width + "</p>" +
@@ -113,8 +129,11 @@
             insertAfter(div, el);
             text.style.textAlign = "center";
         }
+    }
 
-        function locationFunction() {
+    function locationFunction() {
+        if (!onceClicked3) {
+            onceClicked3 = true;
             let text =
                 "<h2 class='screenProperties'>Location properties: </h2>" +
                 "<p>The full URL of this page is: " + window.location.href + "</p>" +
@@ -128,32 +147,26 @@
             insertAfter(div, el);
             text.style.textAlign = "center";
         }
+    }
 
-        function getLocation() {
+    function getLocation() {
+        if (!onceClicked4) {
+            onceClicked4 = true;
             navigator.geolocation.getCurrentPosition(showLoc);
         }
+    }
 
-        function showLoc(pos) {
-            let text =
-                "<h2 class='screenProperties'>Location properties: </h2>" +
-                "<p>Latitude: " + pos.coords.latitude + "</p>" +
-                "<p>Longitude: " + pos.coords.longitude + "</p>"
+    function showLoc(pos) {
+        let text =
+            "<h2 class='screenProperties'>GeoLocation: </h2>" +
+            "<p>Latitude: " + pos.coords.latitude + "</p>" +
+            "<p>Longitude: " + pos.coords.longitude + "</p>"
 
-            let el = document.createElement("span");
-            el.innerHTML = text;
-            let div = document.getElementById("GeolocationText");
-            insertAfter(div, el);
-            text.style.textAlign = "center";
-        }
-    </script>
-</nav>
-<!--NAVBAR ENDS HERE-->
-<h1>Gabriel Rubio Alvarado</h1>
-<p id="NavigatorText"></p>
-<p id="WindowText"></p>
-<p id="ScreenText"></p>
-<p id="LocationText"></p>
-<p id="GeolocationText"></p>
-
-</body>
+        let el = document.createElement("span");
+        el.innerHTML = text;
+        let div = document.getElementById("GeolocationText");
+        insertAfter(div, el);
+        text.style.textAlign = "center";
+    }
+</script>
 </html>
