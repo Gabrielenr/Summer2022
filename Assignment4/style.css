@@ -33,7 +33,7 @@ html {
     height: 100vh;
     letter-spacing: 1px;
     line-height: 2
-    position:relative;
+    position: relative;
 }
 
 .about_me {
@@ -45,7 +45,7 @@ html {
     -webkit-background-clip: text;
     text-transform: uppercase;
     font-size: 30px;
-    position:relative;
+    position: relative;
 }
 
 div.form-group {
@@ -58,19 +58,19 @@ div.form-group {
     justify-content: center;
     letter-spacing: 1px;
     line-height: 2;
-    position:relative;
+    position: relative;
 }
 
 .center {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 30px;
-    position:relative;
+    position: relative;
 }
 
 button {
     text-align: center;
-    position:relative;
+    position: relative;
 }
 
 h1 {
@@ -82,7 +82,7 @@ h1 {
     text-transform: uppercase;
     font-size: 80px;
     margin: 5px 0;
-    position:relative;
+    position: relative;
 }
 
 h2 {
@@ -117,9 +117,20 @@ span {
     margin: 5px 0;
 }
 
+article {
+    color: whitesmoke;
+    text-align: center;
+}
+
+span {
+    font-size: 20px;
+    text-align: center;
+}
+
 p {
     color: whitesmoke;
     text-align: center;
+    font-size: 18px;
 }
 
 .navbar {
@@ -187,11 +198,7 @@ li a:hover {
     display: block;
 }
 
-article {
-    color: whitesmoke;
-    text-align: center;
 
-}
 
 
 
