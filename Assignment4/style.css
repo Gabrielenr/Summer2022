@@ -7,8 +7,6 @@
     margin: 0;
     padding: 0;
     font-family: "Monseratt", sans-serif;
-
-
 }
 
 html {
@@ -22,31 +20,79 @@ html {
     background-color: #1A1E23;
     height: 100%;
     font-weight: 700;
-
 }
 
 .title {
-	font-family: "Monseratt", sans-serif;
-	text-align: center;
-	color: #FFF;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
-	letter-spacing: 1px;
-	line-height:2
+    font-family: "Monseratt", sans-serif;
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    letter-spacing: 1px;
+    line-height: 2
+}
+
+.about_me {
+    background-image: url(https://media.giphy.com/media/Nly9IhTy5UnkY/giphy.gif);
+    background-size: cover;
+    letter-spacing: 1px;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 5px 0;
+}
+
+div.form-group {
+    font-family: "Monseratt", sans-serif;
+    text-align: center;
+    color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+    line-height: 2
+}
+
+.center {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+
+}
+
+button {
+    text-align: center;
 }
 
 h1 {
-	background-image: url(https://media.giphy.com/media/Nly9IhTy5UnkY/giphy.gif);
-	background-size: cover;
-	color: transparent;
-	-moz-background-clip: text;
-	-webkit-background-clip: text;
-	text-transform: uppercase;
-	font-size: 80px;
-	margin: 5px 0;
+    background-image: url(https://media.giphy.com/media/Nly9IhTy5UnkY/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 80px;
+    margin: 5px 0;
+}
+
+h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    padding-top: 25px;
+    background-image: url(https://media.giphy.com/media/Nly9IhTy5UnkY/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 5px 0;
 }
 
 span {
@@ -58,17 +104,18 @@ span {
     color: whitesmoke;
     text-align: center;
     background-image: url(https://media.giphy.com/media/Nly9IhTy5UnkY/giphy.gif);
-	background-size: cover;
-	color: transparent;
-	-moz-background-clip: text;
-	-webkit-background-clip: text;
-	text-transform: uppercase;
-	font-size: 35px;
-	margin: 5px 0;
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 35px;
+    margin: 5px 0;
 }
 
 p {
     color: whitesmoke;
+    text-align: center;
 }
 
 .navbar {
@@ -91,6 +138,7 @@ ul {
 a {
     text-align: center;
 }
+
 
 .dropbtn {
     display: inline-block;

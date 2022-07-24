@@ -10,175 +10,190 @@
 
     </style>
 </head>
-    <body>
+<body>
 
-    <nav id="navbar">
-        <ul id="menu" class="menu">
-            <li class="dropdown">
-                <a id="home" onclick="window.location.reload()" class="dropbtn">Home</a>
-                <div class="dropdown-content">
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Course</a>
-                <div class="dropdown-content">
-                    <a href="https://www.zybooks.com/" target="_blank">ZyBooks</a>
-                    <a href="https://tophat.com/" target="_blank">TopHat</a>
-                    <a href="https://drive.google.com/open?id=1AsHhIFfQ3yNE_m2z4wswRfKh77K0UH9w" target="_blank">Course
-                        Google Drive</a>
-                    <a href="https://gaia.cs.umass.edu/kurose_ross/eighth.php" target="_blank">Kurose and Roose Computer
-                        Networking Book </a>
-                    <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Browser</a>
-                <div class="dropdown-content">
-                    <a id="navigator" href="#" onclick=" navigatorFunction()">Navigator</a>
-                    <a id="window" href="#" onclick="windowFunction()">Window</a>
-                    <a id="screen" href="#" onclick="screenFunction() ">Screen</a>
-                    <a id="location" href="#" onclick="locationFunction()">Location</a>
-                    <a id="geolocation" href="#" onclick="getLocation()">Geolocation</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#" onclick="$('.about_me')[0].focus()" class="dropbtn">About</a>
-                <div class="dropdown-content">
-                    <a href="">About The Developer</a>
-                    <a href="">Contact</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
+<nav id="navbar">
+    <ul id="menu" class="menu">
+        <li class="dropdown">
+            <a id="home" onclick="window.location.reload()" class="dropbtn">Home</a>
+            <div class="dropdown-content">
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Course</a>
+            <div class="dropdown-content">
+                <a href="https://www.zybooks.com/" target="_blank">ZyBooks</a>
+                <a href="https://tophat.com/" target="_blank">TopHat</a>
+                <a href="https://drive.google.com/open?id=1AsHhIFfQ3yNE_m2z4wswRfKh77K0UH9w" target="_blank">Course
+                    Google Drive</a>
+                <a href="https://gaia.cs.umass.edu/kurose_ross/eighth.php" target="_blank">Kurose and Roose Computer
+                    Networking Book </a>
+                <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">Browser</a>
+            <div class="dropdown-content">
+                <a id="navigator" href="#" onclick=" navigatorFunction()">Navigator</a>
+                <a id="window" href="#" onclick="windowFunction()">Window</a>
+                <a id="screen" href="#" onclick="screenFunction() ">Screen</a>
+                <a id="location" href="#" onclick="locationFunction()">Location</a>
+                <a id="geolocation" href="#" onclick="getLocation()">Geolocation</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropbtn">About</a>
+            <div class="dropdown-content">
+                <a href="#about_me">About The Developer</a>
+                <a href="#contact_us">Contact</a>
+            </div>
+        </li>
+    </ul>
+</nav>
 
-    <div class="title">
-        <h1>Gabriel Rubio</h1>
-        <p style="text-align: center" id="NavigatorText"></p>
-        <p style="text-align: center" id="WindowText"></p>
-        <p style="text-align: center" id="ScreenText"></p>
-        <p style="text-align: center" id="LocationText"></p>
-        <p style="text-align: center" id="GeolocationText"></p>
-    </div>
+<div class="title">
+    <h1>Gabriel Rubio</h1>
+    <p style="text-align: center" id="NavigatorText"></p>
+    <p style="text-align: center" id="WindowText"></p>
+    <p style="text-align: center" id="ScreenText"></p>
+    <p style="text-align: center" id="LocationText"></p>
+    <p style="text-align: center" id="GeolocationText"></p>
+</div>
 
-    <script>
-        let onceCLicked = false;
-        let onceClicked1 = false;
-        let onceClicked2 = false;
-        let onceClicked3 = false;
-        let onceClicked4 = false;
+<script>
+    let onceCLicked = false;
+    let onceClicked1 = false;
+    let onceClicked2 = false;
+    let onceClicked3 = false;
+    let onceClicked4 = false;
 
-        function insertAfter(referenceNode, newNode) {
-            referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
-        }
+    function insertAfter(referenceNode, newNode) {
+        referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+    }
 
-        function navigatorFunction() {
-            if (!onceCLicked) {
-                onceCLicked = true;
-                let text =
-                    "<h2 class='screenProperties'>Navigator properties: </h2>" +
-                    "<p>Browser Name: " + navigator.appName + "</p>" +
-                    "<p>Browser Product: " + navigator.product + "</p>" +
-                    "<p>Browser Version: " + navigator.appVersion + "</p>" +
-                    "<p>User-agent header: " + navigator.userAgent + "</p>" +
-                    "<p>Platform: " + navigator.platform + "</p>" +
-                    "<p>Browser Language: " + navigator.language + "</p>";
-
-                let el = document.createElement("span");
-                el.innerHTML = text;
-                let div = document.getElementById("NavigatorText");
-                insertAfter(div, el);
-                text.style.textAlign = "center";
-            }
-        }
-
-        function windowFunction() {
-            if (!onceClicked1) {
-                onceClicked1 = true;
-                let text =
-                    "<h2 class='screenProperties'>Window properties: </h2>" +
-                    "<p>Inner Width: " + innerWidth + "</p>" +
-                    "<p>Inner Height: " + innerHeight + "</p>"
-
-                let el = document.createElement("span");
-                el.innerHTML = text;
-                let div = document.getElementById("WindowText");
-                insertAfter(div, el);
-                text.style.textAlign = "center";
-            }
-        }
-
-        function screenFunction() {
-            if (!onceClicked2) {
-                onceClicked2 = true;
-                let text =
-                    "<h2 class='screenProperties'>Screen properties: </h2>" +
-                    "<p>Screen Width: " + screen.width + "</p>" +
-                    "<p>Screen Height:" + screen.height + "</p>" +
-                    "<p>Available Screen Width: " + screen.availWidth + "</p>" +
-                    "<p>Available Screen Height: " + screen.availHeight + "</p>" +
-                    "<p>Screen Color Dept: " + screen.colorDepth + "</p>" +
-                    "<p>Screen Pixel Depth: " + screen.pixelDepth + "</p>"
-
-                let el = document.createElement("span");
-                el.innerHTML = text;
-                let div = document.getElementById("ScreenText");
-                insertAfter(div, el);
-                text.style.textAlign = "center";
-            }
-        }
-
-        function locationFunction() {
-            if (!onceClicked3) {
-                onceClicked3 = true;
-                let text =
-                    "<h2 class='screenProperties'>Location properties: </h2>" +
-                    "<p>The full URL of this page is: " + window.location.href + "</p>" +
-                    "<p>Page hostname is: " + window.location.hostname + "</p>" +
-                    "<p>Page path is: " + window.location.pathname + "</p>" +
-                    "<p>Page protocol is: " + window.location.protocol + "</p>"
-
-                let el = document.createElement("span");
-                el.innerHTML = text;
-                let div = document.getElementById("LocationText");
-                insertAfter(div, el);
-                text.style.textAlign = "center";
-            }
-        }
-
-        function getLocation() {
-            if (!onceClicked4) {
-                onceClicked4 = true;
-                navigator.geolocation.getCurrentPosition(showLoc);
-            }
-        }
-
-        function showLoc(pos) {
+    function navigatorFunction() {
+        if (!onceCLicked) {
+            onceCLicked = true;
             let text =
-                "<h2 class='screenProperties'>GeoLocation: </h2>" +
-                "<p>Latitude: " + pos.coords.latitude + "</p>" +
-                "<p>Longitude: " + pos.coords.longitude + "</p>"
+                "<h2 class='screenProperties'>Navigator properties: </h2>" +
+                "<p>Browser Name: " + navigator.appName + "</p>" +
+                "<p>Browser Product: " + navigator.product + "</p>" +
+                "<p>Browser Version: " + navigator.appVersion + "</p>" +
+                "<p>User-agent header: " + navigator.userAgent + "</p>" +
+                "<p>Platform: " + navigator.platform + "</p>" +
+                "<p>Browser Language: " + navigator.language + "</p>";
 
             let el = document.createElement("span");
             el.innerHTML = text;
-            let div = document.getElementById("GeolocationText");
+            let div = document.getElementById("NavigatorText");
             insertAfter(div, el);
             text.style.textAlign = "center";
         }
-    </script>
+    }
 
-<div class="about_me" tabindex="0" id="about_me">
-    <h2 class="about_me">My Name</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-        id est laborum consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    function windowFunction() {
+        if (!onceClicked1) {
+            onceClicked1 = true;
+            let text =
+                "<h2 class='screenProperties'>Window properties: </h2>" +
+                "<p>Inner Width: " + innerWidth + "</p>" +
+                "<p>Inner Height: " + innerHeight + "</p>"
+
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("WindowText");
+            insertAfter(div, el);
+            text.style.textAlign = "center";
+        }
+    }
+
+    function screenFunction() {
+        if (!onceClicked2) {
+            onceClicked2 = true;
+            let text =
+                "<h2 class='screenProperties'>Screen properties: </h2>" +
+                "<p>Screen Width: " + screen.width + "</p>" +
+                "<p>Screen Height:" + screen.height + "</p>" +
+                "<p>Available Screen Width: " + screen.availWidth + "</p>" +
+                "<p>Available Screen Height: " + screen.availHeight + "</p>" +
+                "<p>Screen Color Dept: " + screen.colorDepth + "</p>" +
+                "<p>Screen Pixel Depth: " + screen.pixelDepth + "</p>"
+
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("ScreenText");
+            insertAfter(div, el);
+            text.style.textAlign = "center";
+        }
+    }
+
+    function locationFunction() {
+        if (!onceClicked3) {
+            onceClicked3 = true;
+            let text =
+                "<h2 class='screenProperties'>Location properties: </h2>" +
+                "<p>The full URL of this page is: " + window.location.href + "</p>" +
+                "<p>Page hostname is: " + window.location.hostname + "</p>" +
+                "<p>Page path is: " + window.location.pathname + "</p>" +
+                "<p>Page protocol is: " + window.location.protocol + "</p>"
+
+            let el = document.createElement("span");
+            el.innerHTML = text;
+            let div = document.getElementById("LocationText");
+            insertAfter(div, el);
+            text.style.textAlign = "center";
+        }
+    }
+
+    function getLocation() {
+        if (!onceClicked4) {
+            onceClicked4 = true;
+            navigator.geolocation.getCurrentPosition(showLoc);
+        }
+    }
+
+    function showLoc(pos) {
+        let text =
+            "<h2 class='screenProperties'>GeoLocation: </h2>" +
+            "<p>Latitude: " + pos.coords.latitude + "</p>" +
+            "<p>Longitude: " + pos.coords.longitude + "</p>"
+
+        let el = document.createElement("span");
+        el.innerHTML = text;
+        let div = document.getElementById("GeolocationText");
+        insertAfter(div, el);
+        text.style.textAlign = "center";
+    }
+
+</script>
+
+<div class="w3-content w3-justify w3-text-grey w3-padding-150" id="about_me">
+    <h2 class="about_me">About me</h2>
+    <p>I'm a student at Queens College majoring in Computer Science.
     </p>
 </div>
 
+<div class="contact_us" id="contact_us">
+    <h2 class="contact_us">Contact me</h2>
+    <form target="_blank" action="https://formsubmit.co/a5f74ba919a6383e7fe47902a265bd63" method="POST">
+        <div class="form-group" >
+            <div class="form-row">
+                <div class="col">
+                    <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="col">
+                    <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
+        </div>
+        <div class="center"><button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button> </div>
+
+    </form>
+</div>
+
 </html>
+
 
