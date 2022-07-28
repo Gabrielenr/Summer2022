@@ -24,10 +24,10 @@ with open(filename, encoding='utf8') as f:
 word_dic = dict(Counter(doc.replace(',', '').replace('.', '').split()))
 sorted_x = sorted(word_dic.items(), key=lambda kv: kv[1], reverse=True)
 
-print(sorted_x)
-# for key in sorted_x[:50]:
-#     print(key, sorted_x[key])
+top_200_words = sorted_x[0:200]
+top_200_words_dic = dict(top_200_words)
 
-# wordcloud = WordCloud(colormap='prism', background_color='white')
-# wordcloud = wordcloud.fit_words(frequencies)
-# wordcloud = wordcloud.to_file('PrideAndPrejudice.png')
+
+wordcloud = WordCloud(colormap='prism', background_color='white')
+wordcloud = wordcloud.fit_words(top_200_words_dic)
+wordcloud = wordcloud.to_file('PrideAndPrejudice.png')
