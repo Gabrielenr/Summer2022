@@ -11,7 +11,8 @@ length, the average sentence length, a word distribution of all words, a word di
 of words ending in 'ly' and the top 10 longest words. In the “Natural Language Processing (NLP)”
 chapter, you’ll find lots of more sophisticated techniques for analyzing and comparing such texts."""
 
-from textblob import TextBlob
+
+from itertools import count
 
 trump_speech = """Madam Speaker, Mr. Vice President, Members of Congress, the First Lady of the United States — (applause) — and my fellow Americans:
 
@@ -320,4 +321,54 @@ No matter the trials we face, no matter the challenges to come, we must go forwa
 We must keep America first in our hearts.  We must keep freedom alive in our souls.  And we must always keep faith in America’s destiny that one nation, under God, must be the hope and the promise, and the light and the glory, among all the nations of the world.
 
 Thank you.  God bless you.  And God bless America.  Thank you very much.  Thank you.  (Applause.)"""
+ten_large = 10
+words = trump_speech.split()
+words_length = len(words)
+print('Words count :', words_length)
 
+
+def count_chars(trump_speech_chars):
+    result = 0
+    for char in trump_speech_chars:
+        result += 1
+    return result
+
+
+def average_word_count(words_in_speech):
+    average_word = sum(len(words_in_speech) for words_in_speech in words_in_speech) / len(words_in_speech)
+    return average_word
+
+
+def average_sentence_len(trump_speech_sentences):
+    sentence = trump_speech_sentences.split('.')
+    average_sentence = sum(len(x) for x in sentence) / len(sentence)
+    return average_sentence
+
+
+# Top 10 longest words
+def longest_word(words, ten_large):
+    cnt = count()
+    return sorted(words, key=lambda w: (len(w), next(cnt)), reverse=True)[:ten_large]
+
+# Word distribution of all words
+words2 = []
+for word in words:
+    if word not in words2:
+        words2.append(word)
+for i in range(0, len(words2)):
+    print('Distribution of', words2[i], 'is :', words.count(words2[i]))
+
+# Word distribution of words ending in ly
+words_ending_ly = [word for word in trump_speech.split() if word.endswith('ly')]
+words3 = []
+for word in words_ending_ly:
+    if word not in words3:
+        words3.append(word)
+for i in range(0, len(words3)):
+    print('Distribution of', words3[i], 'is :', words.count(words3[i]))
+
+
+print('Characters count :', count_chars(trump_speech))
+print('Average word length : ', average_word_count(words))
+print('Average sentence length :', average_sentence_len(trump_speech))
+print('Top 10 longest words :', longest_word(words, ten_large))
