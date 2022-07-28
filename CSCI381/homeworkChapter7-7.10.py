@@ -80,7 +80,7 @@ class TicTacToe:
             return win
         return False
 
-        for row in self.board:
+        for row in self.chess_board:
             for item in row:
                 if item == '-':
                     return False
