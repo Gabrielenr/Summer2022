@@ -15,8 +15,8 @@ import spacy
 
 from pathlib import Path
 
-nlp = spacy.load("en_core_web_md")
+nlp = spacy.load("en_core_web_lg")
 
 doc1 = nlp(Path('macbeth.txt').read_text())
-doc2 = nlp(Path('hamlet.txt').read_text())
-doc1.similarity(doc2)
+doc3 = nlp(Path('WilliamAlexander.txt').read_text())
+print('Similarity between Shakespeare and William Alexander: ', doc1.similarity(doc3))
