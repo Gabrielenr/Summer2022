@@ -1,4 +1,5 @@
 import pymysql
+import mysql.connector
 import webbrowser
 import os
 import requests
@@ -13,7 +14,7 @@ def read_password():
 
 def connect_to_mars():
     password = read_password()
-    conn = pymysql.connect(host="mars.cs.qc.cuny.edu", port=3306, user="raze2686", passwd=password, database="raze2686")
+    conn = pymysql.connect(host="mars.cs.qc.cuny.edu", port=3306, user="ruga8262", passwd=password, database="ruga8262")
     # cursor = conn.cursor()
     # cursor.execute("SHOW DATABASES")
     # for row in cursor:
@@ -45,7 +46,7 @@ def get_state_data():
     index = state_data.index("Alabama")
     state_data = state_data[index:].split("<br/>")
 
-   # print(state_data)
+    #print(state_data)
 
     index = abbvr_data.index("AL")
     abbvr_data = abbvr_data[index:].split("<br/>")
