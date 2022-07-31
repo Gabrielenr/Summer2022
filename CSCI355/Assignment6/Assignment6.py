@@ -61,10 +61,6 @@ def create_table(headers, data):
     for datum in data:
         name = datum[0]
         href = 'href="https://en.wikipedia.org/wiki/' + name.replace(" ", "_") + '_(state)' + '"'
-        # by passing href to the create_element function, we are making the name of each state
-        # have a link that would redirect to the corresponding state wiki page.
-        # remove index 2 of datum since it is repeating the name of the state. Current list format is
-        # state_abbr, state_name, state_capital, at indices 0,1,2 respectively.
         a = create_element(TAG_A, name, href, True)
         tda = create_element(TAG_TD, a)
         tds = create_elements(TAG_TD, datum[1:])
@@ -96,7 +92,7 @@ def main():
     states = get_state_data()
     headers = ["State", "Abbreviation", "Capital"]
     table = create_table(headers, states)
-    heading = create_element(TAG_H1, "Gabriel's United States List of States")
+    heading = create_element(TAG_H1, "Gabriel's United States Data From Database")
     link_attributes = 'rel="stylesheet" href="MyStyle.css"'
     link = create_element(TAG_LINK, "", link_attributes, end_tag=False)
     head = create_element(TAG_HEAD, link)

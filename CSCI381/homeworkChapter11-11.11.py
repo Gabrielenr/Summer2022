@@ -10,7 +10,7 @@ N = 8
 chess_board = [[0] * N for _ in range(N)]
 
 
-def attack(i, j):
+def Move_Queen(i, j):
     for k in range(0, N):
         if chess_board[i][k] == 1 or chess_board[k][j] == 1:
             return True
@@ -23,21 +23,21 @@ def attack(i, j):
     return False
 
 
-def N_queens(n):
+def QueensBoard(n):
     if n == 0:
         return True
     for i in range(0, N):
         for j in range(0, N):
-            if (not (attack(i, j))) and (chess_board[i][j] != 1):
+            if (not (Move_Queen(i, j))) and (chess_board[i][j] != 1):
                 chess_board[i][j] = 1
-                if N_queens(n - 1):
+                if QueensBoard(n - 1):
                     return True
                 chess_board[i][j] = 0
     return False
 
 
 # call to place the queens on the board
-N_queens(N)
+QueensBoard(N)
 
 # display the board after placing all the queens
 for i in chess_board:
