@@ -3,11 +3,10 @@
 # Assignment 6
 # Gabriel Rubio Alvarado
 
-
-import webbrowser
 import os
+import webbrowser
 import pymysql
-from mysql.connector import cursor
+
 
 TAG_DOCTYPE = '<!DOCTYPE html>'
 TAG_HTML = 'html'
@@ -30,16 +29,15 @@ def read_password():
     return password
 
 
-password = read_password()
-conn = pymysql.connect(host="mars.cs.qc.cuny.edu", port=3306, user="ruga8262",
-                       passwd=password, database="ruga8262")
-
-if conn:
-    print("Connected Successfully")
-else:
-    print("Connection Not Established")
-
-cursor = conn.cursor()
+def connect_to_DB():
+    password = read_password()
+    conn = pymysql.connect(host="mars.cs.qc.cuny.edu", port=3306, user="ruga8262",
+                           passwd=password, database="ruga8262")
+    if conn:
+        print("Connected Successfully")
+        return conn
+    else:
+        print("Connection Not Established")
 
 
 def create_element(tag, content, attributes="", end_tag=True):
@@ -82,10 +80,13 @@ def write_file(file_name, message):
 
 
 def get_state_data():
+    conn = connect_to_DB()
+    cursor = conn.cursor()
     query = "SELECT * FROM state ORDER BY state_name"
     cursor.execute(query)
     rows = cursor.fetchall()
-    print(rows)
+    for row in rows:
+        print(row)
     return rows
 
 
