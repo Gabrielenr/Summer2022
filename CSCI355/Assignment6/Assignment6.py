@@ -85,6 +85,7 @@ def get_state_data():
     query = "SELECT * FROM state ORDER BY state_name"
     cursor.execute(query)
     rows = cursor.fetchall()
+    print(rows)
     return rows
 
 

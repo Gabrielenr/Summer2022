@@ -9,50 +9,23 @@
 
 html {
     background-image: url("flag3.jpeg");
-    /*opacity: 10;*/
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
-    /*min-height: 100%;*/
-    /*background-color: #1A1E23;*/
-    /*height: 100%;*/
-    /*font-weight: 700;*/
 }
 
 h1 {
-    font: 700 3em/1 "Oswald", sans-serif;
-    letter-spacing: 0;
-    padding: .85em 0 .825em;
-    display: block;
-    margin: 0 auto;
-    /*text-shadow: 0 0 80px rgba(255, 255, 255, .5);*/
-    background: url(flag.jpg) repeat-y;
+    background-image: url(https://media.giphy.com/media/TJexhI7yg05uy4YtE4/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
     -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: aitf 80s linear infinite;
-    -webkit-transform: translate3d(0, 0, 0);
-    -webkit-backface-visibility: hidden;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 5px 0;
+    position: relative;
 }
-
-@-webkit-keyframes aitf {
-	0% { background-position: 0% 50%; }
-	100% { background-position: 100% 50%; }
-}
-
-
-/*h1 {*/
-/*    background-image: url(https://media.giphy.com/media/TJexhI7yg05uy4YtE4/giphy.gif);*/
-/*    background-size: cover;*/
-/*    color: transparent;*/
-/*    -moz-background-clip: text;*/
-/*    -webkit-background-clip: text;*/
-/*    text-transform: uppercase;*/
-/*    font-size: 40px;*/
-/*    margin: 5px 0;*/
-/*    position: relative;*/
-/*}*/
 
 
 tr:nth-child(even) {
