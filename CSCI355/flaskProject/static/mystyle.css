@@ -1,0 +1,81 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+*, *:before, *:after {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-image: url("flag3.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+h1 {
+    background-image: url(https://media.giphy.com/media/TJexhI7yg05uy4YtE4/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 5px 0;
+    position: relative;
+}
+
+
+tr:nth-child(even) {
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    text-align: center;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+
+}
+
+table {
+    background: #B22234;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+th {
+    border-bottom: 1px solid #364043;
+    color: #ffffff;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid #364043;
+    color: #fff;
+    font-weight: 400;
+    padding: 0.65em 1em;
+    text-align: center;
+}
+
+tbody tr {
+    transition: background 0.25s ease;
+}
+
+tbody tr:hover {
+    background: #0A3161;
+}
+
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/mystyle.css">
+</head>
+<body>
+<h1>Gabriel's Flask Based United States Page</h1>
+<table>
+  <tr>
+    {% for header in headers %}
+      <th>{{header}}</th>
+    {% endfor %}
+  </tr>
+  {% for row in data %}
+    <tr>
+      {% for cell in row %}
+        <td>{{cell}}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %}
+</table>
+
+</body>
+</html>
