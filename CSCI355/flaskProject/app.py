@@ -19,7 +19,7 @@ def read_password():
 
 
 @app.route('/states')
-def show_states():
+def states_template():
     if not session['loggedin']:
         return 'you are not logged in'
     query = "SELECT * FROM state ORDER BY state_name"
@@ -34,7 +34,7 @@ def show_states():
 
 
 @app.route('/')
-def hello_world():  # put application's code here
+def login_template():
     return render_template('login.html')
 
 
@@ -55,15 +55,13 @@ def login():
             session['loggedin'] = True
             session['login'] = user_row[0]
             msg = 'Logged in successfully !'
-            return show_states()
+            return states_template()
         else:
             msg = 'Incorrect username / password !'
-            # not rendering login.html if password is incorrect.
-            # jinja2.exceptions.TemplateNotFound: login.html
-            # return render_template('login.html', msg=msg)
     print(msg)
     return msg
 
 
 if __name__ == '__main__':
     app.run()
+
