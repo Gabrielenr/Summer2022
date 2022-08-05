@@ -94,7 +94,7 @@ def main():
     states = get_state_data()
     headers = ["State", "Abbreviation", "Capital"]
     table = create_table(headers, states)
-    heading = create_element(TAG_H1, "Gabriel's United States List of States")
+    heading = create_element(TAG_H1, "'s United States List of States")
     link_attributes = 'rel="stylesheet" href="MyStyle.css"'
     link = create_element(TAG_LINK, "", link_attributes, end_tag=False)
     head = create_element(TAG_HEAD, link)
